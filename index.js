@@ -1,6 +1,7 @@
 
-const config = require('./config.json')
 const router = require('./src/router')
+const dotenv = require('./src/config/env')
+
 const { Client, Intents } = require('discord.js');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
@@ -11,4 +12,4 @@ client.on('ready', () => {
 
 client.on('message', router.router);
 
-client.login(config.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
