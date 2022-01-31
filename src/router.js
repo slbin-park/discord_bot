@@ -1,5 +1,6 @@
 const help = require('./commands/help/help')
 const clear = require('./commands/clear/clear')
+const game = require('./commands/game/game')
 const dotenv = require('./config/env')
 
 const router = (msg) => {
@@ -11,6 +12,9 @@ const router = (msg) => {
     }
     else if (commands[0] == '!청소') {
         clear.clear(msg)
+    }
+    else if (commands[0] == '!게임') {
+        game.game(msg)
     }
 }
 module.exports = {
