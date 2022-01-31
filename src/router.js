@@ -1,10 +1,16 @@
 const help = require('./commands/help/help')
-const prefix = '!'
+const clear = require('./commands/clear/clear')
+const dotenv = require('./config/env')
+
 const router = (msg) => {
-    console.log()
-    if (!msg.content.startsWith(prefix)) return
-    if (msg.content == '!도움말') {
+    const commands = msg.content.split(' ')
+    if (msg.author.bot) return;
+    if (!msg.content.startsWith(process.env.PREFIX)) return // 시작단어가 prefix가 아닐경우 리턴
+    if (commands[0] == '!도움말') {
         help.help(msg)
+    }
+    else if (commands[0] == '!청소') {
+        clear.clear(msg)
     }
 }
 module.exports = {

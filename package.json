@@ -22,7 +22,8 @@
     "dotenv": "^14.3.2",
     "fs": "0.0.1-security",
     "gm": "^1.23.1",
-    "mongoose": "^6.1.8"
+    "mongoose": "^6.1.8",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
