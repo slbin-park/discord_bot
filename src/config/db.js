@@ -10,14 +10,5 @@ const db = mysql.createConnection({ //수정예정
 });
 
 
-console.log("Connection Object Created");
-db.connect(function (error1) {
-    if (error1) {
-        console.log(error1);
-        return;
-    } else {
-        console.log("Connected1");
-    }
-});
 
 module.exports = db;

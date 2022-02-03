@@ -1,6 +1,5 @@
 
 const help = (msg) => {
-    console.log(msg.mentions)
 
     const username = '<@' + msg.author.id + '>' // 멘션
     if (msg.content.startsWith('!도움말')) {

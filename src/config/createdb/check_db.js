@@ -4,11 +4,18 @@ const path = require('path');
 const rdf = fs.readFileSync(path.join('json', 'server', 'server_id.json'))
 let json_server = JSON.parse(rdf);
 
-const check_db = () => {
-    json_server.server.push(12345)
-    let data = JSON.stringify(json_server);
-    fs.writeFileSync(path.join('json', 'server', 'server_id.json'), data);
-    console.log(json_server)
+const check_db = (msg) => {
+
+    const check_channel = json_server.server.includes(msg.guild.id)
+
+    if (check_channel) {
+        msg.channel.send('```\n 디비가 이미 존재합니다.\n```')
+        return
+    }
+
+    json_server.server.push(msg.guild.id) // 채널 아이디 푸시
+    let data = JSON.stringify(json_server); // JSON 형식으로 변경
+    fs.writeFileSync(path.join('json', 'server', 'server_id.json'), data); // JSON 파일 저장
 }
 module.exports = {
     check_db
