@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_PATH=./ nodemon"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/slbin-park/discord_bot#readme",
   "dependencies": {
+    "better-module-alias": "^1.1.0",
     "discord.js": "^13.6.0",
     "dotenv": "^14.3.2",
     "fs": "0.0.1-security",

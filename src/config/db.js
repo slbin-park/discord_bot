@@ -1,5 +1,6 @@
 const mysql = require("mysql2");
 const env = require("./env");
+// process.env.USER 를 하면 컴퓨터 계정이름이 뜬다...
 const db = mysql.createConnection({ //수정예정
     host: process.env.DBHOST, //db 주소
     port: process.env.PORT, //db 포트
