@@ -3,7 +3,7 @@ const clear = require('./commands/clear/clear')
 const game = require('./commands/game/game')
 const dotenv = require('./config/env')
 const db = require('./config/createdb/createdb')
-
+const check = require('./config/createdb/check_db')
 const router = (msg) => {
     const commands = msg.content.split(' ')
     if (msg.author.bot) return;
@@ -23,6 +23,9 @@ const router = (msg) => {
             return
         }
         db.makeFolder(msg)
+    }
+    else if (commands[0] == '!체크') {
+        check.check_db()
     }
 }
 module.exports = {
