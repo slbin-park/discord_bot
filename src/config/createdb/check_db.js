@@ -4,7 +4,7 @@ const path = require('path');
 const rdf = fs.readFileSync(path.join('json', 'server', 'server_id.json'))
 let json_server = JSON.parse(rdf);
 
-const check_db = (msg) => {
+const check_db = (msg, folder_name) => {
 
     const check_channel = json_server.server.includes(msg.guild.id)
     console.log(json_server)
@@ -13,7 +13,7 @@ const check_db = (msg) => {
         return false;
     }
 
-    json_server.server.push(msg.guild.id) // 채널 아이디 푸시
+    json_server.server.push([msg.guild.id, folder_name]) // 채널 아이디 푸시
 
     let data = JSON.stringify(json_server); // JSON 형식으로 변경
     fs.writeFileSync(path.join('json', 'server', 'server_id.json'), data); // JSON 파일 저장
