@@ -24,9 +24,6 @@ const router = (msg) => {
         }
         db.makeFolder(msg)
     }
-    else if (commands[0] == '!체크') {
-        check.check_db(msg)
-    }
 }
 module.exports = {
     router
