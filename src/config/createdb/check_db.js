@@ -5,9 +5,9 @@ const rdf = fs.readFileSync(path.join('json', 'server', 'server_id.json'))
 let json_server = JSON.parse(rdf);
 
 const check_db = (msg, folder_name) => {
-
-    const check_channel = json_server.server.includes(msg.guild.id)
     console.log(json_server)
+    const check_channel = json_server.server.filter(data => data[0] == msg.guild.id) ? true : false
+    // 체크 로직 끝
     if (check_channel) {
         msg.channel.send('```\n 디비가 이미 존재합니다.\n```')
         return false;
