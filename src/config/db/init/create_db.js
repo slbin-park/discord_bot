@@ -1,6 +1,6 @@
 const fs = require('fs');
 const mkdirp = require('mkdirp');
-const check_db = require('./check_db')
+const check_db = require('../check/check_db')
 const path = require('path');
 var eng = /^[a-zA-Z]*$/; // 폴더이름 영어로 되어있는지 체크하는 정규표현식
 

@@ -2,7 +2,7 @@ const help = require('./commands/help/help')
 const clear = require('./commands/clear/clear')
 const game = require('./commands/game/game')
 const dotenv = require('./config/env')
-const db = require('./config/db/create_db')
+const db = require('./config/db/init/create_db')
 
 const router = (msg) => {
     const commands = msg.content.split(' ')
